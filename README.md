@@ -5,13 +5,7 @@ Simple tool to show all plaintext passwords stored by Android WebView stored on 
 
 
 
-su
-
-
-find /data/data/. | grep webview.db | while read line
-
-
-    do sqlite3 -cmd "SELECT * FROM password;" ${line} '.quit'
-    
-    
-done
+    su
+    find /data/data/. | grep webview.db | while read line
+        do sqlite3 -cmd "SELECT * FROM password;" ${line} '.quit'
+    done
